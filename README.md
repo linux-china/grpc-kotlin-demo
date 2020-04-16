@@ -5,7 +5,7 @@ gRPC with Kotlin Coroutines: suspend method and Async Flow
 
 # How to test
 
-Please check evans  https://github.com/ktr0731/evans
+Please check evans  https://github.com/ktr0731/evans  or grpcurl https://github.com/fullstorydev/grpcurl
 
 # References
 
