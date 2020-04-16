@@ -3,6 +3,10 @@ gRPC Kotlin Demo
 
 gRPC with Kotlin Coroutines: suspend method and Async Flow
 
+# How to test
+
+Please check evans  https://github.com/ktr0731/evans
+
 # References
 
 * Kotlin, meet gRPC: a new open-source project for modern apps: https://cloud.google.com/blog/products/application-development/use-grpc-with-kotlin
