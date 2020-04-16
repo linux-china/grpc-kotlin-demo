@@ -1,5 +1,6 @@
 import com.google.protobuf.gradle.*
 
+val javaVersion = "1.8"
 val protobufVersion = "3.11.4"
 val grpcVersion = "1.28.1"
 val grpcKotlinVersion = "0.1.1"
@@ -7,11 +8,15 @@ val grpcKotlinVersion = "0.1.1"
 plugins {
   kotlin("jvm") version "1.3.72"
   id("com.google.protobuf") version "0.8.12"
+  java
+  application
 }
 
-group = "org.mvnsearch"
-version = "1.0.0-SNAPSHOT"
-
+application {
+  group = "org.mvnsearch"
+  version = "1.0.0-SNAPSHOT"
+  mainClassName = "org.mvnsearch.greeter.GreeterServerKt"
+}
 
 repositories {
   maven("https://dl.bintray.com/kotlin/kotlin-eap")
@@ -21,11 +26,11 @@ repositories {
   mavenLocal()
 }
 
-
 sourceSets {
-  val main by getting {
-    java.srcDirs("build/generated/source/proto/main/grpc")
-    java.srcDir("build/generated/source/proto/main/java")
+  main {
+    java {
+      setSrcDirs(listOf("build/generated/source/proto/main/grpc", "build/generated/source/proto/main/java"))
+    }
     withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {
       kotlin.srcDir("src/main/kotlin")
       kotlin.srcDir("build/generated/source/proto/main/grpckt")
@@ -48,12 +53,17 @@ dependencies {
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
 }
 
+java {
+  sourceCompatibility = JavaVersion.toVersion(javaVersion)
+  targetCompatibility = JavaVersion.toVersion(javaVersion)
+}
+
 tasks {
   compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = javaVersion
   }
   compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = javaVersion
   }
 }
 
