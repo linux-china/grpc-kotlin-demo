@@ -2,6 +2,7 @@ package org.mvnsearch.greeter
 
 import io.grpc.Server
 import io.grpc.ServerBuilder
+import io.grpc.protobuf.services.ProtoReflectionService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import org.mvnsearch.grpc.GreeterServiceGrpcKt
@@ -14,6 +15,7 @@ class GreeterServer constructor(
   private val server: Server = ServerBuilder
     .forPort(port)
     .addService(GreeterServiceImpl())
+    .addService(ProtoReflectionService.newInstance())
     .build()
 
   fun start() {
