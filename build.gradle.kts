@@ -74,6 +74,7 @@ protobuf {
     // The artifact spec for the Protobuf Compiler
     artifact = "com.google.protobuf:protoc:${protobufVersion}"
   }
+
   plugins {
     id("grpc") {
       artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
@@ -85,7 +86,7 @@ protobuf {
   }
 
   generateProtoTasks {
-    all().forEach {
+    ofSourceSet("main").forEach {
       it.plugins {
         id("grpc")
         id("grpckt")
