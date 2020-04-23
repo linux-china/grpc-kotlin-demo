@@ -2,7 +2,7 @@ import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
 val protobufVersion = "3.11.4"
-val grpcVersion = "1.28.1"
+val grpcVersion = "1.29.0"
 val grpcKotlinVersion = "0.1.1"
 
 plugins {
@@ -66,6 +66,10 @@ tasks {
   compileTestKotlin {
     kotlinOptions.jvmTarget = javaVersion
   }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions.suppressWarnings = true
 }
 
 protobuf {
