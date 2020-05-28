@@ -1,9 +1,9 @@
 import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
-val protobufVersion = "3.11.4"
+val protobufVersion = "3.12.2"
 val grpcVersion = "1.29.0"
-val grpcKotlinVersion = "0.1.1"
+val grpcKotlinVersion = "0.1.2"
 
 plugins {
   kotlin("jvm") version "1.3.72"
@@ -42,7 +42,7 @@ sourceSets {
 dependencies {
   implementation(kotlin("stdlib-jdk8"))
   implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7")
   implementation("com.google.protobuf:protobuf-java:${protobufVersion}")
   implementation("com.google.protobuf:protobuf-java-util:${protobufVersion}")
   implementation("io.grpc:grpc-netty-shaded:${grpcVersion}")
@@ -69,7 +69,7 @@ tasks {
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.suppressWarnings = true
+  kotlinOptions.suppressWarnings = true
 }
 
 protobuf {
