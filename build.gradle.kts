@@ -2,7 +2,7 @@ import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
 val protobufVersion = "3.12.2"
-val grpcVersion = "1.30.2"
+val grpcVersion = "1.31.0"
 val grpcKotlinVersion = "0.1.4"
 
 plugins {
