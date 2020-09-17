@@ -51,7 +51,7 @@ dependencies {
   implementation("io.grpc:grpc-services:${grpcVersion}")
   implementation("com.google.guava:guava:29.0-jre")
   testImplementation(kotlin("test-junit5"))
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
 }
 
 java {
