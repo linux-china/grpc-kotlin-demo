@@ -3,7 +3,7 @@ import com.google.protobuf.gradle.*
 val javaVersion = "1.8"
 val protobufVersion = "3.12.2"
 val grpcVersion = "1.32.1"
-val grpcKotlinVersion = "0.1.5"
+val grpcKotlinVersion = "0.2.0"
 
 plugins {
   kotlin("jvm") version "1.4.10"
@@ -85,7 +85,7 @@ protobuf {
     }
     // Specify protoc to generate using our grpc kotlin plugin
     id("grpckt") {
-      artifact = "io.grpc:protoc-gen-grpc-kotlin:${grpcKotlinVersion}"
+      artifact = "io.grpc:protoc-gen-grpc-kotlin:${grpcKotlinVersion}:jdk7@jar"
     }
   }
 
