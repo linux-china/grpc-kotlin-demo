@@ -1,9 +1,9 @@
 import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
-val protobufVersion = "3.12.2"
-val grpcVersion = "1.32.1"
-val grpcKotlinVersion = "0.2.0"
+val protobufVersion = "3.14.0"
+val grpcVersion = "1.33.1"
+val grpcKotlinVersion = "0.2.1"
 
 plugins {
   kotlin("jvm") version "1.4.10"
@@ -42,7 +42,7 @@ sourceSets {
 dependencies {
   implementation(kotlin("stdlib-jdk8"))
   implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
   implementation("com.google.protobuf:protobuf-java:${protobufVersion}")
   implementation("com.google.protobuf:protobuf-java-util:${protobufVersion}")
   implementation("io.grpc:grpc-netty-shaded:${grpcVersion}")
