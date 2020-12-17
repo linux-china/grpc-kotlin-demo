@@ -2,11 +2,11 @@ import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
 val protobufVersion = "3.14.0"
-val grpcVersion = "1.33.1"
-val grpcKotlinVersion = "0.2.1"
+val grpcVersion = "1.34.1"
+val grpcKotlinVersion = "1.0.0"
 
 plugins {
-  kotlin("jvm") version "1.4.10"
+  kotlin("jvm") version "1.4.21"
   id("com.google.protobuf") version "0.8.13"
   java
   application
