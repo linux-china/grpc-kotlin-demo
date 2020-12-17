@@ -5,6 +5,8 @@ gRPC with Kotlin Coroutines: suspend method and Async Flow
 
 # How to test
 
+Start the server first:  `./gradlew -x test run`.
+
 Please check evans  https://github.com/ktr0731/evans  or grpcurl https://github.com/fullstorydev/grpcurl
 
 # References
