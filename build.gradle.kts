@@ -7,7 +7,7 @@ val grpcKotlinVersion = "1.0.0"
 
 plugins {
   kotlin("jvm") version "1.4.21"
-  id("com.google.protobuf") version "0.8.13"
+  id("com.google.protobuf") version "0.8.14"
   java
   application
 }
@@ -42,7 +42,7 @@ sourceSets {
 dependencies {
   implementation(kotlin("stdlib-jdk8"))
   implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
   implementation("com.google.protobuf:protobuf-java:${protobufVersion}")
   implementation("com.google.protobuf:protobuf-java-util:${protobufVersion}")
   implementation("io.grpc:grpc-netty-shaded:${grpcVersion}")
