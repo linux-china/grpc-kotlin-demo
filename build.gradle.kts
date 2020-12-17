@@ -41,6 +41,7 @@ sourceSets {
 
 dependencies {
   implementation(kotlin("stdlib-jdk8"))
+  implementation("javax.annotation:javax.annotation-api:1.3.2")
   implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
   implementation("com.google.protobuf:protobuf-java:${protobufVersion}")
