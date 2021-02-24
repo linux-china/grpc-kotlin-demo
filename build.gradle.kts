@@ -1,13 +1,13 @@
 import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
-val protobufVersion = "3.14.0"
-val grpcVersion = "1.34.1"
+val protobufVersion = "3.15.2"
+val grpcVersion = "1.36.0"
 val grpcKotlinVersion = "1.0.0"
 
 plugins {
-  kotlin("jvm") version "1.4.21"
-  id("com.google.protobuf") version "0.8.14"
+  kotlin("jvm") version "1.4.30"
+  id("com.google.protobuf") version "0.8.15"
   java
   application
 }
@@ -15,13 +15,11 @@ plugins {
 application {
   group = "org.mvnsearch"
   version = "1.0.0-SNAPSHOT"
-  mainClassName = "org.mvnsearch.greeter.GreeterServerKt"
+  mainClass.value("org.mvnsearch.greeter.GreeterServerKt")
 }
 
 repositories {
-  maven("https://dl.bintray.com/kotlin/kotlin-eap")
   google()
-  jcenter()
   mavenCentral()
   mavenLocal()
 }
@@ -52,7 +50,7 @@ dependencies {
   implementation("io.grpc:grpc-services:${grpcVersion}")
   implementation("com.google.guava:guava:30.1-jre")
   testImplementation(kotlin("test-junit5"))
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
 }
 
 java {
