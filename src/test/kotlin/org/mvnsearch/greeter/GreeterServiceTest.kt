@@ -20,7 +20,7 @@ class GreeterServiceTest {
 
   @BeforeAll
   fun setUp() {
-    this.grpcChannel = ManagedChannelBuilder.forAddress("localhost", 50051)
+    this.grpcChannel = ManagedChannelBuilder.forAddress("localhost", 50052)
       .usePlaintext()
       .executor(Dispatchers.Default.asExecutor())
       .build()
