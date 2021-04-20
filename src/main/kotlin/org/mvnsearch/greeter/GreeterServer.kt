@@ -55,7 +55,7 @@ class GreeterServer constructor(
 }
 
 fun main() {
-  val port = 50051
+  val port = 50052
   val server = GreeterServer(port)
   server.start()
   server.blockUntilShutdown()
