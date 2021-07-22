@@ -1,13 +1,13 @@
 import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
-val protobufVersion = "3.15.8"
-val grpcVersion = "1.37.0"
+val protobufVersion = "3.17.3"
+val grpcVersion = "1.39.0"
 val grpcKotlinVersion = "1.1.0"
 
 plugins {
-  kotlin("jvm") version "1.5.0"
-  id("com.google.protobuf") version "0.8.16"
+  kotlin("jvm") version "1.5.21"
+  id("com.google.protobuf") version "0.8.17"
   java
   application
 }
@@ -41,16 +41,16 @@ dependencies {
   implementation(kotlin("stdlib-jdk8"))
   implementation("javax.annotation:javax.annotation-api:1.3.2")
   implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
   implementation("com.google.protobuf:protobuf-java:${protobufVersion}")
   implementation("com.google.protobuf:protobuf-java-util:${protobufVersion}")
   implementation("io.grpc:grpc-netty:${grpcVersion}")
   implementation("io.grpc:grpc-protobuf:${grpcVersion}")
   implementation("io.grpc:grpc-stub:${grpcVersion}")
   implementation("io.grpc:grpc-services:${grpcVersion}")
-  implementation("com.google.guava:guava:30.1-jre")
+  implementation("com.google.guava:guava:30.1.1-jre")
   testImplementation(kotlin("test-junit5"))
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
 }
 
 java {
