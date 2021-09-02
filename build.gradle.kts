@@ -2,11 +2,11 @@ import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
 val protobufVersion = "3.17.3"
-val grpcVersion = "1.39.0"
+val grpcVersion = "1.41.1"
 val grpcKotlinVersion = "1.1.0"
 
 plugins {
-  kotlin("jvm") version "1.5.21"
+  kotlin("jvm") version "1.5.30"
   id("com.google.protobuf") version "0.8.17"
   java
   application
@@ -41,7 +41,7 @@ dependencies {
   implementation(kotlin("stdlib-jdk8"))
   implementation("javax.annotation:javax.annotation-api:1.3.2")
   implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
   implementation("com.google.protobuf:protobuf-java:${protobufVersion}")
   implementation("com.google.protobuf:protobuf-java-util:${protobufVersion}")
   implementation("io.grpc:grpc-netty:${grpcVersion}")
