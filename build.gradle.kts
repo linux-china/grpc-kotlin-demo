@@ -1,9 +1,9 @@
 import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
-val protobufVersion = "3.18.0"
-val grpcVersion = "1.40.1"
-val grpcKotlinVersion = "1.1.0"
+val protobufVersion = "3.19.1"
+val grpcVersion = "1.41.0"
+val grpcKotlinVersion = "1.2.0"
 
 plugins {
   kotlin("jvm") version "1.5.31"
@@ -39,7 +39,7 @@ sourceSets {
 
 dependencies {
   implementation(kotlin("stdlib-jdk8"))
-  implementation(platform("io.netty:netty-bom:4.1.68.Final"))
+  implementation(platform("io.netty:netty-bom:4.1.69.Final"))
   implementation(platform("com.google.protobuf:protobuf-bom:${protobufVersion}"))
   implementation(platform("io.grpc:grpc-bom:${grpcVersion}"))
   implementation("javax.annotation:javax.annotation-api:1.3.2")
@@ -51,9 +51,9 @@ dependencies {
   implementation("io.grpc:grpc-protobuf")
   implementation("io.grpc:grpc-stub")
   implementation("io.grpc:grpc-services")
-  implementation("com.google.guava:guava:30.1.1-jre")
+  implementation("com.google.guava:guava:31.0.1-jre")
   testImplementation(kotlin("test-junit5"))
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.0")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
 }
 
 java {
