@@ -2,7 +2,7 @@ package org.mvnsearch.greeter
 
 import io.grpc.ManagedChannel
 import kotlinx.coroutines.flow.Flow
-import org.mvnsearch.grpc.GreeterServiceGrpcKt.GreeterServiceCoroutineStub
+import org.mvnsearch.grpc.GreeterServiceGrpcKt
 import org.mvnsearch.grpc.HelloReply
 import org.mvnsearch.grpc.HelloRequest
 
@@ -12,8 +12,8 @@ import org.mvnsearch.grpc.HelloRequest
  * @author linux_china
  */
 interface GreeterService {
-  suspend fun sayHello(request: HelloRequest): HelloReply
-  fun sayHellos(request: HelloRequest): Flow<HelloReply>
+    suspend fun sayHello(request: HelloRequest): HelloReply
+    fun sayHellos(request: HelloRequest): Flow<HelloReply>
 }
 
 /**
@@ -21,15 +21,15 @@ interface GreeterService {
  * @param channel managed channel
  */
 class GreeterServiceStub constructor(
-  channel: ManagedChannel
+    channel: ManagedChannel
 ) : GreeterService {
-  private val stub: GreeterServiceCoroutineStub = GreeterServiceCoroutineStub(channel)
+    private val stub: GreeterServiceGrpcKt.GreeterServiceCoroutineStub = GreeterServiceGrpcKt.GreeterServiceCoroutineStub(channel)
 
-  override suspend fun sayHello(request: HelloRequest): HelloReply {
-    return stub.sayHello(request)
-  }
+    override suspend fun sayHello(request: HelloRequest): HelloReply {
+        return stub.sayHello(request)
+    }
 
-  override fun sayHellos(request: HelloRequest): Flow<HelloReply> {
-    return stub.sayHellos(request)
-  }
+    override fun sayHellos(request: HelloRequest): Flow<HelloReply> {
+        return stub.sayHellos(request)
+    }
 }
