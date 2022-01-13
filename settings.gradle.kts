@@ -1,10 +1,10 @@
+rootProject.name = "grpc-kotlin-demo"
+
 pluginManagement {
-  repositories {
-    maven("https://dl.bintray.com/kotlin/kotlin-eap")
-    mavenCentral()
-    maven("https://plugins.gradle.org/m2/")
-  }
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
 }
 
-rootProject.name = "grpc-kotlin-demo"
 
