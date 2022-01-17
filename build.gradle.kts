@@ -50,7 +50,7 @@ dependencies {
   implementation(platform("io.grpc:grpc-bom:${grpcVersion}"))
   implementation("javax.annotation:javax.annotation-api:1.3.2")
   implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
   implementation("com.google.protobuf:protobuf-java")
   implementation("com.google.protobuf:protobuf-kotlin:3.19.3")
   implementation("com.google.protobuf:protobuf-java-util")
