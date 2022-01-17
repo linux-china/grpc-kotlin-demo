@@ -18,3 +18,4 @@ Please check evans  https://github.com/ktr0731/evans  or grpcurl https://github.
 * Next Level gRPC With Kotlin and Coroutines: https://www.youtube.com/watch?v=SfmdAA2kwWI&list=PLj6h78yzYM2NN72UX_fdmc5CZI-D5qfJL&index=5
 * gRPC with Kotlin Coroutines: https://codingwithmohit.com/grpc/grpc-kotlin-coroutines/
 * Announcing Kotlin support for protocol buffers: https://developers.googleblog.com/2021/11/announcing-kotlin-support-for-protocol.html
+* Protobuf and gRPC In Action With Kotlin: https://medium.com/@ahad.azarian/the-grpc-and-protobuf-in-action-with-kotlin-cf5296887856
