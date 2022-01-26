@@ -1,0 +1,7 @@
+### SayHello grpc call
+//@name SayHello
+GRPC localhost:50052/org.mvnsearch.grpc.GreeterService/SayHello
+
+{
+  "name": "Jackie"
+}
