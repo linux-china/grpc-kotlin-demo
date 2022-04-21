@@ -1,12 +1,12 @@
 import com.google.protobuf.gradle.*
 
 val javaVersion = "1.8"
-val protobufVersion = "3.19.4"
+val protobufVersion = "3.20.0"
 val grpcVersion = "1.45.1"
 val grpcKotlinVersion = "1.2.1"
 
 plugins {
-    kotlin("jvm") version "1.6.20"
+    kotlin("jvm") version "1.6.21"
     id("com.google.protobuf") version "0.8.18"
     java
     application
@@ -45,14 +45,14 @@ sourceSets {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation(platform("io.netty:netty-bom:4.1.75.Final"))
+    implementation(platform("io.netty:netty-bom:4.1.76.Final"))
     implementation(platform("com.google.protobuf:protobuf-bom:${protobufVersion}"))
     implementation(platform("io.grpc:grpc-bom:${grpcVersion}"))
     implementation("javax.annotation:javax.annotation-api:1.3.2")
     implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
     implementation("com.google.protobuf:protobuf-java")
-    implementation("com.google.protobuf:protobuf-kotlin:3.19.4")
+    implementation("com.google.protobuf:protobuf-kotlin:${protobufVersion}")
     implementation("com.google.protobuf:protobuf-java-util")
     implementation("io.grpc:grpc-netty")
     implementation("io.grpc:grpc-protobuf")
