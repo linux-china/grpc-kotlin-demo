@@ -1,9 +1,9 @@
 import com.google.protobuf.gradle.*
 
 val javaVersion = "17"
-val protobufVersion = "3.20.1"
+val protobufVersion = "3.21.0"
 val grpcVersion = "1.46.0"
-val grpcKotlinVersion = "1.2.1"
+val grpcKotlinVersion = "1.3.0"
 
 plugins {
     kotlin("jvm") version "1.6.21"
@@ -45,12 +45,12 @@ sourceSets {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation(platform("io.netty:netty-bom:4.1.76.Final"))
+    implementation(platform("io.netty:netty-bom:4.1.77.Final"))
     implementation(platform("com.google.protobuf:protobuf-bom:${protobufVersion}"))
     implementation(platform("io.grpc:grpc-bom:${grpcVersion}"))
     implementation("javax.annotation:javax.annotation-api:1.3.2")
     implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
     implementation("com.google.protobuf:protobuf-java")
     implementation("com.google.protobuf:protobuf-kotlin:${protobufVersion}")
     implementation("com.google.protobuf:protobuf-java-util")
@@ -94,7 +94,7 @@ protobuf {
         }
         // Specify protoc to generate using our grpc kotlin plugin
         id("grpckt") {
-            artifact = "io.grpc:protoc-gen-grpc-kotlin:${grpcKotlinVersion}:jdk7@jar"
+            artifact = "io.grpc:protoc-gen-grpc-kotlin:${grpcKotlinVersion}:jdk8@jar"
         }
     }
 
