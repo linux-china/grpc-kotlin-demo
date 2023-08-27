@@ -1,13 +1,13 @@
 import com.google.protobuf.gradle.*
 
 val javaVersion = "17"
-val protobufVersion = "3.21.0"
-val grpcVersion = "1.46.0"
-val grpcKotlinVersion = "1.3.0"
+val protobufVersion = "3.24.2"
+val grpcVersion = "1.57.2"
+val grpcKotlinVersion = "1.3.1"
 
 plugins {
-    kotlin("jvm") version "1.6.21"
-    id("com.google.protobuf") version "0.8.18"
+    kotlin("jvm") version "1.9.10"
+    id("com.google.protobuf") version "0.9.4"
     java
     application
 }
@@ -45,12 +45,12 @@ sourceSets {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation(platform("io.netty:netty-bom:4.1.77.Final"))
+    implementation(platform("io.netty:netty-bom:4.1.97.Final"))
     implementation(platform("com.google.protobuf:protobuf-bom:${protobufVersion}"))
     implementation(platform("io.grpc:grpc-bom:${grpcVersion}"))
     implementation("javax.annotation:javax.annotation-api:1.3.2")
     implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("com.google.protobuf:protobuf-java")
     implementation("com.google.protobuf:protobuf-kotlin:${protobufVersion}")
     implementation("com.google.protobuf:protobuf-java-util")
@@ -60,7 +60,7 @@ dependencies {
     implementation("io.grpc:grpc-services")
     implementation("com.google.guava:guava:31.1-jre")
     testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
 }
 
 java {
