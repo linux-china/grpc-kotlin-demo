@@ -1,12 +1,12 @@
-import com.google.protobuf.gradle.*
+import com.google.protobuf.gradle.id
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-val javaVersion = "17"
 val protobufVersion = "4.28.0"
 val grpcVersion = "1.66.0"
 val grpcKotlinVersion = "1.4.1"
 
 plugins {
-  kotlin("jvm") version "1.9.25"
+  kotlin("jvm") version "2.0.20"
   id("com.google.protobuf") version "0.9.4"
   java
   application
@@ -44,28 +44,27 @@ dependencies {
 }
 
 java {
-  sourceCompatibility = JavaVersion.toVersion(javaVersion)
-  targetCompatibility = JavaVersion.toVersion(javaVersion)
+  sourceCompatibility = JavaVersion.VERSION_21
+  targetCompatibility = JavaVersion.VERSION_21
 }
 
 tasks {
   compileKotlin {
-    kotlinOptions.jvmTarget = javaVersion
+    compilerOptions {
+      jvmTarget = JvmTarget.JVM_21
+      suppressWarnings = true
+      freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn")
+    }
   }
   compileTestKotlin {
-    kotlinOptions.jvmTarget = javaVersion
+    compilerOptions {
+      jvmTarget = JvmTarget.JVM_21
+    }
   }
 }
-
 
 kotlin {
-    jvmToolchain(17)
-}
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
-  kotlinOptions {
-    suppressWarnings = true
-    freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn")
-  }
+  jvmToolchain(21)
 }
 
 protobuf {
