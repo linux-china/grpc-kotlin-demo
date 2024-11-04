@@ -1,12 +1,12 @@
 import com.google.protobuf.gradle.id
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-val protobufVersion = "4.28.2"
-val grpcVersion = "1.68.0"
+val protobufVersion = "4.28.3"
+val grpcVersion = "1.68.1"
 val grpcKotlinVersion = "1.4.1"
 
 plugins {
-  kotlin("jvm") version "2.0.20"
+  kotlin("jvm") version "2.0.21"
   id("com.google.protobuf") version "0.9.4"
   java
   application
@@ -40,7 +40,7 @@ dependencies {
   implementation("io.grpc:grpc-services")
   implementation("com.google.guava:guava:33.3.1-jre")
   testImplementation(kotlin("test-junit5"))
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.2")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.3")
 }
 
 java {
